@@ -1,2 +1,0 @@
-class WoobahsController < ApplicationController
-end

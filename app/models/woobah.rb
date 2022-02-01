@@ -1,2 +1,0 @@
-class Woobah < ApplicationRecord
-end

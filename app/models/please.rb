@@ -1,2 +1,0 @@
-class Please < ApplicationRecord
-end

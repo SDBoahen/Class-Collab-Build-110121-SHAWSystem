@@ -1,2 +1,0 @@
-class PleasesController < ApplicationController
-end
