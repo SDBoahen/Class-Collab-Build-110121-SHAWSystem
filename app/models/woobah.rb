@@ -1,0 +1,2 @@
+class Woobah < ApplicationRecord
+end

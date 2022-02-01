@@ -1,0 +1,2 @@
+class ShawsController < ApplicationController
+end

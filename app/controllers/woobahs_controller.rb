@@ -1,0 +1,2 @@
+class WoobahsController < ApplicationController
+end

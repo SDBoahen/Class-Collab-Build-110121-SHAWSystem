@@ -1,0 +1,2 @@
+class Shaw < ApplicationRecord
+end
