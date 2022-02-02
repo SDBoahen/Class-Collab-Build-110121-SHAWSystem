@@ -1,3 +1,175 @@
+
+
+
+
+
+# SUPER MVP
+##  🌟 User -< Alerts 
+####  User:Auth
+
+
+
+
+# MVP
+##  🌟 User  -< UserLocation/UserLivesHere/UserIsHere/UserCurrentLocation >- Location >- ...CAN CONTINUE...
+
+##  🌟 User  -<  Alert  -<  AlertDamages   >- DamageTypes (Categories/Tags/Types)
+##  🌟           Alert  -<  AlertLocation  >- Location >- ...CAN CONTINUE...
+
+
+#### Locations
+# Location (ZipCodes/Neighborhood/Township/Villiages/provinices)  >- ...
+#   ...  >- County >- Town >- City >- State >- Country >- Planet >- SolarSystem >- Galaxies >- ...
+## !! 👀 !! THERE ARE JOINS BETWEEN EVERY SINGLE FORM OF RELATIONAL-LOCATIONS
+
+#< NYC >< USA >
+#< DC >< USA >
+#< Indonesia >
+
+
+
+#### MODELS
+
+
+## User
+####  User:Auth 🌟
+####  Attributes
+# t.string :name
+# t.string :username
+# t.string :email
+# t.string :current_location
+# t.string :password_digest
+#### :password *  ->  salted + hashed  ->  password_digest
+#### 123, password, abc ->->->->->->->->->->->-> XBJ7-JCKDB JCDS-NJ4K-KS6J-N5JH-D737
+
+
+# -x- t.integer :age
+#### age users 
+# -x- t.string :hometown 
+
+--------------------------------
+
+
+
+
+
+
+## Alert
+####  Attributes
+# t.string :title
+# t.string :description
+# t.datetime :alert_time
+# t.belongs_to :user
+
+# -x- date + time sepreately - At This Time 😉
+
+
+--------------------------------
+
+
+
+
+## JOIN: AlertDamage
+####  Attributes
+
+# t.string :level  ::  "minor", "moderate", "high", "critical"
+
+# t.belongs_to :alert
+# t.belongs_to :damage_type
+
+--------------------------------
+
+
+## DamageType 
+####  Attributes
+# t.string :level  ::  "minor", "moderate", "high", "critical"
+
+
+# -x-
+# t.integer :level  ::  10, 20, 30, ... 100
+# ~ DamagedThings 
+## Could Be Another Model 😬
+
+
+
+#< The Tapapn Zee >
+
+#May Windup Being Instances ~ 
+#Infrastructure t.boolean 
+#Bridge
+#Electrical
+#Weather
+#Fire
+#Flood
+#Airborne
+#
+
+--------------------------------
+
+## Location
+
+--------------------------------
+## JOIN: AlertLocation
+
+--------------------------------
+
+@channel #BACKENDTEAM
+(And Anyone Who Would Like to Join Them - Ofcorse)
+ 
+
+
+
+Your Assignment for Today
+Do All Generators for the Remaining Models
+- Alert
+- JOIN: AlertDamage
+- DamageType
+- Location
+- JOIN: AlertLocation
+
+Establish sensible Attributes for all Models
+Remember - That Will Be Established in the  Migrations
+
+
+
+
+
+Start Working on Controller Actions for Any Requests Y’all Think Will Be Necessary
+Feel Free to Use Postman to test those  Routes  +  Controller Actions :ok_hand::skin-tone-5::dizzy: 
+
+Make Seeds in a bunch of Combinations for Each Relaionship Between Models
+Test Out the Macros and Confirm That They Work Properly :ok_hand::skin-tone-5::eyes:  
+
+
+
+
+:small_red_triangle_down::small_red_triangle_down::small_red_triangle_down::small_red_triangle_down::small_red_triangle_down::small_red_triangle_down::small_red_triangle_down::small_red_triangle_down:
+
+:bangbang: PLEASE :bangbang:
+
+:arrow-right: NO ONE PUSH TO THE MAIN BRANCH WITHOUT TELLING ME/ALERTING THE CHANNEL
+
+tnx :meow_ok:
+
+:small_red_triangle::small_red_triangle::small_red_triangle::small_red_triangle::small_red_triangle::small_red_triangle::small_red_triangle::small_red_triangle:
+
+
+
+
+Have Fuuuuuuuun:sparkles::meow_party::sparkles:
+
+
+
+
+
+
+
+
+
+
+
+
+
 ################################
 ################################
 ################################
