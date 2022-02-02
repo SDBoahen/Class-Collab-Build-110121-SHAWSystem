@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  level: MyString
+  alert: one
+  damage_type: one
+
+two:
+  level: MyString
+  alert: two
+  damage_type: two

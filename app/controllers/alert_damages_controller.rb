@@ -1,0 +1,2 @@
+class AlertDamagesController < ApplicationController
+end

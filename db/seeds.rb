@@ -1,15 +1,29 @@
+# 🌟 DATABASE DIAGRAM
+##  User  -< []  Alert  -<  [] AlertDamages []  >-  DamageTypes
+
+
+
+
+AlertDamage.destroy_all
+Alert.destroy_all
+DamageType.destroy_all
 User.destroy_all
 #  !!  We Destroy_all In REVERSE ORDER
 ##  Dependent Models FIRST
 
+
 # 🖱😉✨
+
 
 #  !!  We Create In Forward ORDER
 ##  Independent Models FIRST
 
 
 
-User.create(
+
+puts "Seeding Users 🌱✨ "
+
+shannon = User.create(
   name: "Shannon",
   username: "Shan",
   email: "Shannon@Woobly.net",
@@ -17,7 +31,7 @@ User.create(
   password_digest: "123",
 )
 
-User.create(
+sam = User.create(
   name: "Sam",
   username: "Sam",
   email: "Sam@Woobly.net",
@@ -25,3 +39,54 @@ User.create(
   password: "123",
 )
 
+
+
+puts "Seeding DamageTypes 🌱✨ "
+
+# name: BuildingDamage
+building_damage = DamageType.create( level: "minor" ) 
+
+# name: WeatherDamage
+weather_damage = DamageType.create( level: "moderate" ) 
+
+
+
+
+puts "Seeding Alerts 🌱✨ "
+
+a1 = Alert.create(
+  title: "BeastBoy vs Slade on 125TH!!!! 👀",
+  description: "BeastBoy is Sick and Tired of Slade",
+  alert_time: Time.now,
+  user: sam
+  # user_id: sam.id
+) 
+
+a2 = Alert.create(
+  title: "BeastBoy vs Slade on 125TH!!!! PART2 👀",
+  description: "BeastBoy is Sick and Tired of Slade....AGAIN",
+  alert_time: Time.now,
+  user: sam
+  # user_id: sam.id
+) 
+
+
+
+
+puts "Seeding AlertDamages 🌱✨ "
+
+AlertDamage.create(  
+  level: "critical",
+  alert_id: a1.id,
+  damage_type_id: building_damage.id
+)
+# building_damage = DamageType.create( level: "minor" ) 
+
+# A -< AD >- DT
+
+AlertDamage.create(  
+  level: "minor",
+  alert_id: a2.id,
+  damage_type_id: building_damage.id
+)
+# building_damage = DamageType.create( level: "minor" ) 

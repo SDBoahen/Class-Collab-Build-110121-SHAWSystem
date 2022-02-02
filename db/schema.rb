@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_01_212014) do
+ActiveRecord::Schema.define(version: 2022_02_02_204618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "alert_damages", force: :cascade do |t|
+    t.string "level"
+    t.bigint "alert_id", null: false
+    t.bigint "damage_type_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["alert_id"], name: "index_alert_damages_on_alert_id"
+    t.index ["damage_type_id"], name: "index_alert_damages_on_damage_type_id"
+  end
+
+  create_table "alerts", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "alert_time"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_alerts_on_user_id"
+  end
+
+  create_table "damage_types", force: :cascade do |t|
+    t.string "level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -25,4 +51,7 @@ ActiveRecord::Schema.define(version: 2022_02_01_212014) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "alert_damages", "alerts"
+  add_foreign_key "alert_damages", "damage_types"
+  add_foreign_key "alerts", "users"
 end

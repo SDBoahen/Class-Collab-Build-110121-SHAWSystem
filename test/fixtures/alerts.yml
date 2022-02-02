@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  alert_time: 2022-02-02 15:33:00
+  user: one
+
+two:
+  title: MyString
+  description: MyString
+  alert_time: 2022-02-02 15:33:00
+  user: two

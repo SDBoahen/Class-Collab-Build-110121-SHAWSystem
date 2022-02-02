@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
 
+  resources :alert_damages
+  resources :damage_types
+  resources :alerts
   resources :users
 
   
