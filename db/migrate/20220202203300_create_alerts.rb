@@ -4,6 +4,7 @@ class CreateAlerts < ActiveRecord::Migration[6.1]
 
       t.string :title
       t.string :description
+      t.string :location
       t.datetime :alert_time
 
       t.belongs_to :user, null: true, foreign_key: true

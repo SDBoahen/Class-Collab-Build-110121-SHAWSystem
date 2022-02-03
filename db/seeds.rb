@@ -43,11 +43,9 @@ sam = User.create(
 
 puts "Seeding DamageTypes 🌱✨ "
 
-# name: BuildingDamage
-building_damage = DamageType.create( level: "minor" ) 
+building_damage = DamageType.create( name: "Building Damage" ) 
 
-# name: WeatherDamage
-weather_damage = DamageType.create( level: "moderate" ) 
+weather_damage = DamageType.create( name: "Weather Damage" ) 
 
 
 

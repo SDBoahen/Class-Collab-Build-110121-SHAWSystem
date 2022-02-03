@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2022_02_02_204618) do
   create_table "alerts", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.string "location"
     t.datetime "alert_time"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -36,7 +37,7 @@ ActiveRecord::Schema.define(version: 2022_02_02_204618) do
   end
 
   create_table "damage_types", force: :cascade do |t|
-    t.string "level"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
